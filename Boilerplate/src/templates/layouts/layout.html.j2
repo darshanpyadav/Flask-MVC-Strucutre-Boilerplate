@@ -1,0 +1,71 @@
+{% set app_name = 'M41k Dev3lops' %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>{{ app_name }}</title>
+    <meta name="description" content="{{ app_name }}">
+    <meta name="author" content="M41k Dev3lops">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    {# Bootstrap CDN #}
+        {# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> #}
+
+    {# Materialize CSS CDN #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+    {# Font Awesome CDN #}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {# Materialize CSS Icons #}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    {# Custom CSS #}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+    {# Extra Styles #}
+        {% block styles %}{% endblock %}
+
+    {# Google Fonts #}
+        {# Source Code Pro #}
+        	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    {% block body %}
+    {% endblock %}
+
+    {# jQuery CDN #}
+    	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    {# jQuery Local #}
+   		{# <script src="{{ url_for('static', filename='js/jquery.js') }}"></script> #}
+
+    {# jQuery UI CDN #}
+    	{# <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script> #}
+
+    {# jQuery UI Local #}
+    	{# <script src="{{ url_for('static', filename='js/jqueryui.js') }}"></script> #}
+
+    {# Bootstrap jQuery #}
+        {# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> #}
+
+    {# Materialize CSS jQuery #}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    {# Custom JS #}
+    	<script src="{{ url_for('static', filename='js/main.min.js') }}"></script>
+
+    {# Extra JS #}
+        {% block js%} {% endblock %}
+</body>
+</html>
