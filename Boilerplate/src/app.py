@@ -2,6 +2,7 @@
 from flask import Flask
 import pymysql
 from flask_sqlalchemy import SQLAlchemy
+from flask_htmlmin import HTMLMIN
 
 
 driver = 'mysql'
@@ -15,6 +16,8 @@ app = Flask(__name__)
 app.secret_key = "SOSECRET"
 app.config['SQLALCHEMY_DATABASE_URI'] = '{}://{}:{}@{}/{}'.format(driver, db_username, db_passwd, db_host, db_name)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['MINIFY_PAGE'] = True
+HTMLMIN(app)
 db = SQLAlchemy(app)
 
 from .controllers import mainController
